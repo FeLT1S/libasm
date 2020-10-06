@@ -1,14 +1,13 @@
 section	.text
-	global _ft_read
+	global _ft_write
 	extern ___error
-_ft_read:
+_ft_write:
 	push rbx
-	mov rax, 0x2000003
+	mov rax, 0x2000004
 	syscall
 	jc error
 	pop rbx
 	ret
-​
 error:
 	mov rbx, rax
 	call ___error

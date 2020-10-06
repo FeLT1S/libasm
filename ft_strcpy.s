@@ -5,12 +5,12 @@ _ft_strcpy:
 	je exiterr
 	cmp rsi, 0
 	je exiterr
-	mov rbx, 0
+	mov rcx, -1
 inc:
-	mov BYTE al, [rsi + rbx]
-	mov BYTE [rdi + rbx], al
-	inc rbx
-	cmp BYTE [rsi + rbx], 0
+	inc rcx
+	mov BYTE al, [rsi + rcx]
+	mov BYTE [rdi + rcx], al
+	cmp BYTE [rsi + rcx], 0
 	jne inc
 exit:
 	mov rax, rdi
